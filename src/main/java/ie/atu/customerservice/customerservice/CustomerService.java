@@ -8,9 +8,15 @@ import java.util.List;
 
 @Service
 public class CustomerService {
+    private final CustomerClient customerClient;
     private List<CustomerDetails> CustomerLibrary = new ArrayList<>();
 
-    public List<CustomerDetails> getCustomerById() {
-        return CustomerLibrary;
+    public CustomerService(CustomerClient customerClient) {
+        this.customerClient = customerClient;
     }
+
+    public CustomerDetails getCustomerById(int customerId {
+        return customerClient.getCustomerById(customerId);
+    }
+
 }
